@@ -39,7 +39,7 @@ def index() -> str:
 		r = requests.get(api_url(city.name)).json()
 		weather = {
 			'city': city.name,
-			'temperature': r['main']['temp'],
+			'temperature': round(r['main']['temp']),
 			'description': r['weather'][0]['description'],
 			'icon': r['weather'][0]['icon'],
 		}
